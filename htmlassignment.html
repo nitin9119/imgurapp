@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="referrer" content="no-referrer" />
+    <title>Imgur</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      .navbar {
+        position: relative;
+        top: 0;
+        left: 0;
+        z-index: 1;
+        padding: 15px 5px 15px 5px;
+        width: 100%;
+        height: 40px;
+        border: none;
+        display: flex;
+      }
+      .leftHeader {
+        width: 23%;
+        height: 40px;
+        display: flex;
+        justify-content: space-evenly;
+        border: none;
+      }
+      .leftHeader > img {
+        width: 90px;
+        height: 40px;
+        background-size: contain;
+      }
+      .header {
+        width: 100%;
+        height: 341px;
+        background-image: url("https://s.imgur.com/desktop-assets/desktop-assets/homebg.e52b5cdf24f83bcd55f9f1318855f2ef.png");
+        background-size: cover;
+      }
+      .centreHeader {
+        display: flex;
+        border: none;
+        width: 40%;
+        height: 40px;
+      }
+      .Searchbar-form {
+        display: flex;
+      }
+      .Searchbar-textInput {
+        margin: auto;
+        width: 450px;
+        height: 20px;
+        border: 1px solid transparent;
+        padding: 0px 15px 0px 15px;
+        border-radius: 3px;
+        outline: 0 none;
+        opacity: 0.8;
+        font-size: 14px;
+        font-weight: 700;
+        letter-spacing: 0.4px;
+        color: #fff;
+        text-shadow: inherit;
+      }
+      .rightHeader {
+        display: flex;
+        width: 34%;
+        height: 40px;
+        border: none;
+        justify-content: space-evenly;
+      }
+
+      .btn {
+        font-size: 16px;
+        vertical-align: middle;
+        display: flex;
+        border: none;
+        border-radius: 3px;
+        padding: 8px 15px 8px 15px;
+        background-color: #1bb76e;
+        color: #fff;
+        font-weight: bold;
+      }
+      .signin_btn {
+        font-size: 18px;
+        font-weight: medium;
+        color: #fff;
+        padding: 8px;
+      }
+      .message {
+        text-align: center;
+        font-size: 25px;
+        color: #aed8ea;
+      }
+      .cont_top_option {
+        width: 90%;
+        height: 20px;
+        margin: auto;
+        display: flex;
+        justify-content: space-between;
+        color: #fff;
+        font-weight: medium;
+        text-shadow: whitesmoke;
+        font-size: 18px;
+      }
+      .upper_gridsdiv {
+        width: 92%;
+        height: 160px;
+        border: none;
+        display: flex;
+        margin: auto;
+      }
+      .upper_grids_first {
+        width: 250px;
+        height: 120px;
+
+        border: 1px solid whitesmoke;
+        border-radius: 3px;
+        margin: auto;
+      }
+      .upper_grids_first > img {
+        width: 250px;
+        height: 120px;
+        background-size: contain;
+      }
+      .upper_grids {
+        width: 120px;
+        height: 120px;
+        margin: auto;
+        border-radius: 3px;
+        border: 1px solid whitesmoke;
+      }
+      .imsgs > div {
+        border: none;
+        border-radius: 3px;
+        background-color: #474a51;
+        justify-content: center;
+        color: white;
+        margin-bottom: 5px 0px 5px 0px;
+        font-weight: bold;
+        font-size: 16px;
+        box-shadow: 0px 2px black transparent;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <div class="navbar">
+        <div class="leftHeader">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Imgur_Title_Screen_Image.svg/1280px-Imgur_Title_Screen_Image.svg.png"
+          />
+          <button class="btn">
+            <img
+              src="https://s.imgur.com/desktop-assets/desktop-assets/icon-new-post.13ab64f9f36ad8f25ae3544b350e2ae1.svg"
+            />&nbsp;<span>New post</span>
+          </button>
+        </div>
+        <div class="centreHeader">
+          <form class="Searchbar-form" action="/search">
+            <input
+              placeholder="Images, #tags, @users oh my!"
+              type="text"
+              class="Searchbar-textInput"
+              name="q"
+              value=""
+              style="height: 36px"
+            /><button
+              type="submit"
+              class="Searchbar-submitInput"
+              style="
+                bottom: 0;
+                margin: auto;
+                opacity: 0.8;
+                background: transparent;
+                color: #fff;
+                border: 0;
+                outline: 0 none;
+                padding: 8px;
+                cursor: pointer;
+              "
+            >
+              <img
+                class="search"
+                src="https://s.imgur.com/desktop-assets/desktop-assets/icon-search.8d0f9b564a4659d48d8eca38b968a7f2.svg"
+              />
+            </button>
+          </form>
+        </div>
+        <div class="rightHeader">
+          <a
+            ><svg
+              width="32"
+              height="32"
+              viewBox="0 -2 34 34"
+              class="uScaleTransition ProfileNavbar-item"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <title>Comment Leaderboard</title>
+              <g fill="none" fill-rule="evenodd">
+                <path d="M0 0h32v32H0z"></path>
+                <g
+                  transform="translate(6.5 3)"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M4 16.977v7.076l5.5-2.481 5.5 2.481v-7.076l-5.5 1.245L4 16.977z"
+                  ></path>
+                  <circle cx="9.5" cy="9.5" r="8.5"></circle>
+                </g>
+              </g>
+            </svg>
+          </a>
+          <button class="btn">Go Add-free</button>
+          <a class="signin_btn">SignIn</a>
+          <button class="btn">SignUp</button>
+        </div>
+      </div>
+      <h3 class="message">
+        You, as an Imgurian, are a beautiful creature and deserve happiness.
+      </h3>
+      <div class="cont_top_option">
+        <span>EXPLORE TAGS</span><span>MORE TAGS +</span>
+      </div>
+      <!-- <div class="upper_gridsdiv">
+        <div class="upper_grids_first">
+          <img
+            src="https://i.imgur.com/T79OvmE_d.jpg?maxwidth=800&shape=thumb&fidelity=high"
+            alt=""
+          />
+        </div>
+        <div class="upper_grids"></div>
+        <div class="upper_grids"></div>
+        <div class="upper_grids"></div>
+        <div class="upper_grids"></div>
+        <div class="upper_grids"></div>
+        <div class="upper_grids"></div>
+        <div class="upper_grids"></div>
+      </div> -->
+      <!-- <img
+        src="https://i.imgur.com/T79OvmE_d.jpg?maxwidth=800&shape=thumb&fidelity=high"
+        alt=""
+      /> -->
+    </div>
+    <div
+      id="shallu"
+      style="
+        display: grid;
+        grid-template-columns: 20% 20% 20% 20%;
+        padding-top: 10px;
+        justify-content: center;
+        background-color: rgb(54, 53, 53);
+      "
+    >
+      <div id="minishallu1" class="imsgs" style="width: 255px"></div>
+      <div id="minishallu2" class="imsgs" style="width: 255px"></div>
+      <div id="minishallu3" class="imsgs" style="width: 255px"></div>
+      <div id="minishallu4" class="imsgs" style="width: 255px"></div>
+    </div>
+  </body>
+  <script>
+    let cont = document.getElementById("imageCont");
+    let minshal1 = document.getElementById("minishallu1");
+    let minshal2 = document.getElementById("minishallu2");
+    let minshal3 = document.getElementById("minishallu3");
+    let minshal4 = document.getElementById("minishallu4");
+
+    async function imagesDiv() {
+      try {
+        let headersList = {
+          Authorization: "Client-ID fe6cbe383cc4efa",
+        };
+        let res = await fetch(
+          "https://api.imgur.com/3/gallery/hot/viral/1/month?showViral=true&mature=true&album_previews=true",
+          {
+            method: "GET",
+            headers: headersList,
+          }
+        );
+        let data = await res.json();
+        data.data.forEach((d, i) => {
+          //console.log(e);
+          console.log(d);
+
+          if (
+            d?.images?.[0].link &&
+            (d?.images?.[0].type == "image/jpeg" ||
+              d?.images?.[0].type == "image/gif")
+          ) {
+            var imagediv = document.createElement("div");
+            var m = document.createElement("img");
+            m.src = d?.images?.[0].link;
+            m.style.width = "100%";
+            var title = document.createElement("p");
+            title.innerHTML = d?.title;
+            title.style.padding = "5px 5px 20px 10px";
+            imagediv.append(m, title);
+
+            //cont.append(m);
+
+            if (i % 4 === 0) {
+              minshal1.append(imagediv);
+            } else if (i % 4 === 1) {
+              minshal2.append(imagediv);
+            } else if (i % 4 === 2) {
+              minshal3.append(imagediv);
+            } else if (i % 4 === 3) {
+              minshal4.append(imagediv);
+            }
+          }
+          // i++;
+        });
+      } catch (error) {
+        console.log(error);
+      }
+    }
+    imagesDiv();
+  </script>
+</html>
