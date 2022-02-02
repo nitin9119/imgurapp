@@ -269,13 +269,14 @@
     let minshal3 = document.getElementById("minishallu3");
     let minshal4 = document.getElementById("minishallu4");
 
+    let pagenum = 1;
     async function imagesDiv() {
       try {
         let headersList = {
           Authorization: "Client-ID fe6cbe383cc4efa",
         };
         let res = await fetch(
-          "https://api.imgur.com/3/gallery/hot/viral/1/month?showViral=true&mature=true&album_previews=true",
+          `https://api.imgur.com/3/gallery/hot/viral/${pagenum}/month?showViral=true&mature=true&album_previews=true`,
           {
             method: "GET",
             headers: headersList,
@@ -319,5 +320,16 @@
       }
     }
     imagesDiv();
+
+    window.addEventListener("scroll", function () {
+      const { scrollTop, scrollHeight, clientHeight } =
+        document.documentElement;
+      if (scrollTop + clientHeight > scrollHeight - 3 * 1000) {
+        setTimeout(() => {
+          pagenum++;
+          imagesDiv();
+        }, 300);
+      }
+    });
   </script>
 </html>
